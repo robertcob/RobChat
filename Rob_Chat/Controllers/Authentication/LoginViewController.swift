@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class LoginViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
@@ -113,7 +113,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-        
+        print("login button was tapped!")
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
         
@@ -124,6 +124,15 @@ class LoginViewController: UIViewController {
         }
         
         // Firebase Login Implementation
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {authResult, error in
+            
+            guard let result = authResult, error == nil else {
+                print("Failed to lon in user with email: \(email)")
+                return
+            }
+            let user = result.user
+            print("logged in User\(user)")
+        })
     }
     func alertUserLoggedIn() {
         let alert = UIAlertController(title: "Incorrect Typing", message: "Please enter all valid details", preferredStyle: .alert)
