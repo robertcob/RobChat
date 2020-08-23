@@ -53,11 +53,6 @@ extension UIColor {
             hexString.remove(at: hexString.startIndex)
         }
         assert(hexString.count == 6, "invalid hex code used")
-
-        
-//        if hexString.count != 6 {
-//            return UIColor.link
-//        }
         
         var rgb : UInt64 = 0
         Scanner(string: hexString).scanHexInt64(&rgb)
