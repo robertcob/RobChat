@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5AF429CE-C999-4F14-81D3-DAE0A19C3549"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0878E819-9DFE-4C77-B9C1-FBAE86520E2D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rob_Chat/Controllers/Authentication/RegisterViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "registerButtonTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0878E819-9DFE-4C77-B9C1-FBAE86520E2D - 33635529ae8d07a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #2 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in Rob_Chat.RegisterViewController.(registerButtonTapped in _2B35EDA15AF5D69B9F2E242F10DF58B5)() -&gt; ()"
+                  moduleName = "Rob_Chat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robertobrien/Desktop/Rob_Chat/Rob_Chat/Controllers/Authentication/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "236"
+                  endingLineNumber = "236"
+                  offsetFromSymbolStart = "923">
+               </Location>
+               <Location
+                  uuid = "0878E819-9DFE-4C77-B9C1-FBAE86520E2D - 6eff02f8244779bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in closure #2 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Bool) -&gt; () in Rob_Chat.RegisterViewController.(registerButtonTapped in _2B35EDA15AF5D69B9F2E242F10DF58B5)() -&gt; ()"
+                  moduleName = "Rob_Chat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/robertobrien/Desktop/Rob_Chat/Rob_Chat/Controllers/Authentication/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "239"
+                  endingLineNumber = "239"
+                  offsetFromSymbolStart = "171">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
