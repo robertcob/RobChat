@@ -8,8 +8,11 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class RegisterViewController: UIViewController {
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -189,9 +192,12 @@ class RegisterViewController: UIViewController {
         
         guard let firstName = firstNameField.text, let lastName = lastNameField.text, let email =  emailField.text, let password = passwordField.text,
             !email.isEmpty, !password.isEmpty, !firstName.isEmpty, !lastName.isEmpty,  password.count >= 6 else {
-//                alertUserLoggedIn()
+                
+                alertUserLoggedIn(messaage: "Please create a stronger password...")
                 return
         }
+        
+        spinner.show(in: view)
         
         // Firebase Login Implementation
         
@@ -200,6 +206,10 @@ class RegisterViewController: UIViewController {
                 
                 return
             }
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
+            }
+            
             guard !exists else{
                 // user already exists
                 strongSelf.alertUserLoggedIn(messaage: "Sorry but a user has already taken this email address!")

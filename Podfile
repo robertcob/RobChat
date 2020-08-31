@@ -12,11 +12,18 @@ target 'Rob_Chat' do
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
 
 # Facebook
 pod 'FBSDKLoginKit'
 
 # Google
 pod 'GoogleSignIn'
+
+# Message App Pods
+pod 'MessageKit'
+pod 'JGProgressHUD'
+pod 'RealmSwift'
+pod 'SDWebImage'
 
 end
