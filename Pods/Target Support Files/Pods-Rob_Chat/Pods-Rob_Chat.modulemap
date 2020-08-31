@@ -1,0 +1,6 @@
+framework module Pods_Rob_Chat {
+  umbrella header "Pods-Rob_Chat-umbrella.h"
+
+  export *
+  module * { export * }
+}

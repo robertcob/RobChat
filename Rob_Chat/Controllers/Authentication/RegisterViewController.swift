@@ -19,7 +19,7 @@ class RegisterViewController: UIViewController {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person")
+        imageView.image = UIImage(systemName: "person.circle.fill")
         imageView.tintColor = .gray
         imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
@@ -189,24 +189,40 @@ class RegisterViewController: UIViewController {
         
         guard let firstName = firstNameField.text, let lastName = lastNameField.text, let email =  emailField.text, let password = passwordField.text,
             !email.isEmpty, !password.isEmpty, !firstName.isEmpty, !lastName.isEmpty,  password.count >= 6 else {
-                alertUserLoggedIn()
+//                alertUserLoggedIn()
                 return
         }
         
         // Firebase Login Implementation
         
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: {authResult, error in
-            
-            guard let result = authResult, error == nil else {
-                print("Error creating user")
+        DatabaseManager.shared.userExists(with: email, completion: {[weak self] exists in
+            guard let strongSelf = self else {
+                
                 return
             }
-            let user = result.user
-            print("Created User:\(user)" )
+            guard !exists else{
+                // user already exists
+                strongSelf.alertUserLoggedIn(messaage: "Sorry but a user has already taken this email address!")
+                return
+            }
+            
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { authResult, error in
+
+                
+                guard authResult != nil, error == nil else {
+                    print("Error creating user")
+                    return
+                }
+                
+                DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email))
+                strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+            })
         })
+        
+
     }
-    func alertUserLoggedIn() {
-        let alert = UIAlertController(title: "Incorrect Typing", message: "Please enter all valid details", preferredStyle: .alert)
+    func alertUserLoggedIn(messaage: String) {
+        let alert = UIAlertController(title: "Incorrect Typing", message: messaage, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title:"Dismiss", style: .cancel, handler: nil))
         present(alert, animated: true)

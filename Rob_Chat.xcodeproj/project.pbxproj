@@ -22,6 +22,7 @@
 		EC34389124E9D654008C604F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC34389024E9D654008C604F /* ProfileViewController.swift */; };
 		EC34389424E9DE19008C604F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC34389324E9DE19008C604F /* Extensions.swift */; };
 		EC3835FE24F32DB100B857E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC3835FD24F32DB100B857E0 /* GoogleService-Info.plist */; };
+		EC38360024F3ED5B00B857E0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3835FF24F3ED5B00B857E0 /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		EC34389024E9D654008C604F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EC34389324E9DE19008C604F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EC3835FD24F32DB100B857E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EC3835FF24F3ED5B00B857E0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				EC34386C24E5FDA1008C604F /* AppDelegate.swift */,
 				EC34386E24E5FDA1008C604F /* SceneDelegate.swift */,
 				EC34389324E9DE19008C604F /* Extensions.swift */,
+				EC3835FF24F3ED5B00B857E0 /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC34388724E9D5D1008C604F /* LoginViewController.swift in Sources */,
+				EC38360024F3ED5B00B857E0 /* DatabaseManager.swift in Sources */,
 				EC34388924E9D5EB008C604F /* RegisterViewController.swift in Sources */,
 				EC34388F24E9D640008C604F /* NewConversationViewController.swift in Sources */,
 				EC34387124E5FDA1008C604F /* ConversationsViewController.swift in Sources */,
