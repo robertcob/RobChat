@@ -179,8 +179,7 @@ class LoginViewController: UIViewController {
         
         // Firebase Login Implementation
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] authResult, error in
-            
-
+        
             guard let strongSelf = self else {
                 return
             }
@@ -195,6 +194,8 @@ class LoginViewController: UIViewController {
                 return
             }
             let user = result.user
+            
+            UserDefaults.standard.set(email, forKey: "email")
             print("logged in User\(user)")
             strongSelf.navigationController?.dismiss(animated: true, completion: nil)
         })
@@ -264,7 +265,8 @@ extension LoginViewController: LoginButtonDelegate {
                     print("Failed to get email and userName from FB result")
                     return
             }
-
+            
+            UserDefaults.standard.set(email, forKey: "email")
             
             
             DatabaseManager.shared.userExists(with: email, completion: { exists in
